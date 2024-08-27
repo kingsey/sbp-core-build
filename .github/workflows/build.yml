@@ -42,7 +42,7 @@ jobs:
           git fetch --tags sekai
           puernya_version=$(CGO_ENABLED=0 go run ./cmd/internal/read_tag)
           echo puernya_version=$puernya_version >> $GITHUB_OUTPUT
-          echo puernya_tags=with_ech,with_utls,with_clash_api >> $GITHUB_OUTPUT
+          echo puernya_tags=with_ech,with_quic,with_utls,with_clash_api >> $GITHUB_OUTPUT
 
   puernya_cross:
     strategy:
