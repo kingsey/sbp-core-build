@@ -42,7 +42,7 @@ jobs:
           git fetch --tags sekai
           puernya_version=$(CGO_ENABLED=0 go run ./cmd/internal/read_tag)
           echo puernya_version=$puernya_version >> $GITHUB_OUTPUT
-          echo puernya_tags=with_ech,with_quic,with_utls,with_clash_api >> $GITHUB_OUTPUT
+          echo puernya_tags=with_clash_api >> $GITHUB_OUTPUT
 
   puernya_cross:
     strategy:
@@ -51,10 +51,10 @@ jobs:
           # linux
           # - { name: linux-amd64, goos: linux, goarch: amd64, goamd64: v1 }
           # - { name: linux-amd64-v3, goos: linux, goarch: amd64, goamd64: v3 }
-          # - { name: linux-armv5, goos: linux, goarch: arm, goarm: 5 }
+          - { name: linux-armv5, goos: linux, goarch: arm, goarm: 5 }
           # - { name: linux-armv6, goos: linux, goarch: arm, goarm: 6 }
           # - { name: linux-armv7, goos: linux, goarch: arm, goarm: 7 }
-          - { name: linux-arm64, goos: linux, goarch: arm64 }
+          # - { name: linux-arm64, goos: linux, goarch: arm64 }
           # - { name: linux-mips-softfloat, goos: linux, goarch: mips, gomips: softfloat }
           # - { name: linux-mipsle-softfloat, goos: linux, goarch: mipsle, gomips: softfloat }
           # - { name: linux-mipsle-hardfloat, goos: linux, goarch: mipsle, gomips: hardfloat }
