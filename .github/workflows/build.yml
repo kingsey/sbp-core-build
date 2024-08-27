@@ -1,4 +1,4 @@
-name: Update sing-box
+name: build sing-box-puernya
 on:
   workflow_dispatch:
   push:
